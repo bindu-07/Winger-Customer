@@ -35,7 +35,7 @@
                     app:expandedTitleMarginStart="16dp"
                     app:expandedTitleTextAppearance="@style/AppbarTitle1"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                    app:title="Sathyasaaaaaaaaaaaaaaaaasasd">
+                    app:title="Dada Boudi Restruent">
 
 
                     <ss.com.bannerslider.Slider
@@ -49,7 +49,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:background="@color/colorAccentLight1" />
+                         />
 
                     <ImageView
                         android:id="@+id/image_call"
@@ -116,11 +116,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:background="@drawable/edittext"
                         android:drawableStart="@drawable/ic_drawer_search_small"
                         android:drawablePadding="8dp"
                         android:fontFamily="@font/open_sans_semibold"
                         android:paddingTop="8dp"
-                        android:paddingEnd="12dp"
+                        android:paddingHorizontal="12dp"
                         android:paddingBottom="8dp"
                         android:text="Search Menu"
                         android:textSize="14sp" />
@@ -187,21 +188,21 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
 
-                    <include layout="@layout/shimmering_item_shop" />
+                    <include layout="@layout/shimmering_item_food" />
                 </LinearLayout>
             </com.facebook.shimmer.ShimmerFrameLayout>
 

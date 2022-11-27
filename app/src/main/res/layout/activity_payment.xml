@@ -16,36 +16,56 @@
             android:id="@+id/layout_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:animateLayoutChanges="true"
+            android:orientation="vertical"
             android:padding="16dp">
 
-            <ImageView
-                android:id="@+id/image_close"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginBottom="32dp"
-                android:src="@drawable/ic_close"
-                android:tint="@android:color/black" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
+
+                <ImageView
+                    android:id="@+id/image_close"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_close"
+                    android:layout_gravity="center"
+                    android:tint="@android:color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center|start"
+                    android:paddingTop="3dp"
+                    android:text="Payment"
+                    android:layout_marginStart="15dp"
+                    android:textAppearance="@style/AppbarTitle"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+            </LinearLayout>
 
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="start"
-                android:src="@drawable/ic_signup" />
+            <!--            <ImageView-->
+            <!--                android:layout_width="150dp"-->
+            <!--                android:layout_height="150dp"-->
+            <!--                android:layout_gravity="start"-->
+            <!--                android:src="@drawable/ic_signup" />-->
 
             <TextView
+                android:id="@+id/text_total_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:fontFamily="@font/poppins_bold"
                 android:gravity="center|start"
                 android:paddingTop="3dp"
-                android:text="Payment"
-                android:textAppearance="@style/AppbarTitle"
+                android:text="Bill total: ₹222"
+                android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:textSize="32sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -54,14 +74,16 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:gravity="center|start"
                 android:paddingTop="3dp"
-                android:text="Select a payment mode"
-                android:textSize="14sp" />
+                android:layout_marginTop="16dp"
+                android:text="Select payment mode"
+                android:textSize="16sp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/layout_credit_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:visibility="gone"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="0dp">
 
@@ -74,23 +96,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <com.google.android.material.radiobutton.MaterialRadioButton
                             android:id="@+id/radio_credit"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:paddingStart="8dp"
                             android:text="Credit Card"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="8dp"
-                            android:src="@drawable/ic_credit_card"/>
+                            android:src="@drawable/ic_credit_card" />
                     </LinearLayout>
 
                     <com.google.android.material.card.MaterialCardView
@@ -219,6 +243,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:visibility="gone"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="0dp">
 
@@ -231,23 +256,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <com.google.android.material.radiobutton.MaterialRadioButton
                             android:id="@+id/radio_debit"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:paddingStart="8dp"
                             android:text="Debit Card"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="8dp"
-                            android:src="@drawable/ic_debit"/>
+                            android:src="@drawable/ic_debit" />
                     </LinearLayout>
 
                     <com.google.android.material.card.MaterialCardView
@@ -352,6 +379,7 @@
                                 </LinearLayout>
 
                             </LinearLayout>
+
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/button_debit_pay"
                                 android:layout_width="match_parent"
@@ -371,9 +399,10 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/layout_bhim_upi"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="0dp">
 
@@ -386,23 +415,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <com.google.android.material.radiobutton.MaterialRadioButton
                             android:id="@+id/radio_bhim"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:paddingStart="8dp"
-                            android:text="BHIM UPI"
+                            android:text="UPI"
                             android:textColor="@android:color/black"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
+
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="8dp"
-                            android:src="@drawable/ic_upi"/>
+                            android:src="@drawable/ic_upi" />
                     </LinearLayout>
 
                     <com.google.android.material.card.MaterialCardView
@@ -421,25 +452,25 @@
                             android:orientation="vertical"
                             android:padding="16dp">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/poppins_semibold"
-                                android:text="ENTER YOUR UPI ID"
-                                android:textColor="@android:color/tab_indicator_text"
-                                android:textSize="10sp"
-                                android:textStyle="bold" />
+                            <!--                            <TextView-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_weight="1"-->
+                            <!--                                android:fontFamily="@font/poppins_semibold"-->
+                            <!--                                android:text="ENTER YOUR UPI ID"-->
+                            <!--                                android:textColor="@android:color/tab_indicator_text"-->
+                            <!--                                android:textSize="10sp"-->
+                            <!--                                android:textStyle="bold" />-->
 
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:background="@drawable/bg_rounded_grey"
-                                android:fontFamily="@font/poppins_semibold"
-                                android:padding="8dp"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
+                            <!--                            <EditText-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginTop="8dp"-->
+                            <!--                                android:background="@drawable/bg_rounded_grey"-->
+                            <!--                                android:fontFamily="@font/poppins_semibold"-->
+                            <!--                                android:padding="8dp"-->
+                            <!--                                android:textSize="14sp"-->
+                            <!--                                android:textStyle="bold" />-->
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/button_bhim_pay"
@@ -447,10 +478,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
                                 android:fontFamily="@font/poppins_semibold"
-                                android:text="Pay"
+                                android:text="PAY VIA UPI"
                                 android:textSize="18sp"
                                 android:textStyle="bold"
-                                app:backgroundTint="@color/colorAccent" />
+                                app:backgroundTint="#2E7D32" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -462,7 +493,8 @@
                 android:id="@+id/layout_paytm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
+                android:visibility="visible"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="0dp">
 
@@ -475,23 +507,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <com.google.android.material.radiobutton.MaterialRadioButton
                             android:id="@+id/radio_paytm"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:paddingStart="8dp"
-                            android:text="Paytm"
+                            android:text="Pay on Delivery"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
                         <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="8dp"
-                            android:src="@drawable/ic_paytm"/>
+                            android:src="@drawable/cashdelivery" />
                     </LinearLayout>
 
                     <com.google.android.material.card.MaterialCardView
@@ -515,20 +549,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/poppins_semibold"
-                                android:text="ENTER PAYTM LINKED PHONE NUMBER"
+                                android:text="Cash on Delivery and Online Payment Available all time. recommend to pay via Online Payment."
                                 android:textColor="@android:color/tab_indicator_text"
                                 android:textSize="10sp"
                                 android:textStyle="bold" />
 
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:background="@drawable/bg_rounded_grey"
-                                android:fontFamily="@font/poppins_semibold"
-                                android:padding="8dp"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
+<!--                            <EditText-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="8dp"-->
+<!--                                android:background="@drawable/bg_rounded_grey"-->
+<!--                                android:fontFamily="@font/poppins_semibold"-->
+<!--                                android:padding="8dp"-->
+<!--                                android:textSize="14sp"-->
+<!--                                android:textStyle="bold" />-->
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/button_paytm_pay"
@@ -539,14 +573,13 @@
                                 android:text="Pay"
                                 android:textSize="18sp"
                                 android:textStyle="bold"
-                                app:backgroundTint="@color/colorAccent" />
+                                app:backgroundTint="#2E7D32" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
 
 
         </LinearLayout>

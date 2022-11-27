@@ -32,7 +32,6 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
                         android:orientation="vertical"
                         android:padding="16dp">
 
@@ -49,7 +48,7 @@
                                 android:layout_marginEnd="16dp"
                                 android:scaleType="fitCenter"
                                 android:src="@drawable/ic_close"
-                                android:tint="@android:color/white"
+                                android:tint="@android:color/black"
                                 android:visibility="visible" />
 
                             <View
@@ -75,7 +74,7 @@
                                 android:gravity="center|start"
                                 android:paddingTop="3dp"
                                 android:textAppearance="@style/AppbarTitle"
-                                android:textColor="@android:color/white"
+                                android:textColor="@android:color/black"
                                 tools:text="Track your order" />
 
                             <ImageView
@@ -86,7 +85,7 @@
                                 android:layout_marginEnd="16dp"
                                 android:scaleType="fitCenter"
                                 android:src="@drawable/ic_refresh_white"
-                                android:tint="@android:color/white"
+                                android:tint="@android:color/black"
                                 android:visibility="visible" />
 
 
@@ -96,7 +95,8 @@
                                 android:layout_height="40dp"
                                 android:layout_gravity="center"
                                 android:padding="8dp"
-                                android:src="@drawable/ic_call_white" />
+                                android:src="@drawable/ic_call_white"
+                                android:tint="@android:color/black"/>
 
 
                         </LinearLayout>

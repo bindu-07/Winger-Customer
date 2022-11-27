@@ -67,6 +67,10 @@ class PreferencesHelper(context: Context) : AppPreferencesHelper {
     override var cartDeliveryPref: String?
         get() = cartPreferences.getString(AppConstants.CART_DELIVERY, null)
         set(value) = cartPreferences.edit().putString(AppConstants.CART_DELIVERY, value).apply()
+    override var paymentMode: String?
+        get() = cartPreferences.getString(AppConstants.PAYMENT_MODE, null)
+        set(value) = cartPreferences.edit().putString(AppConstants.PAYMENT_MODE, value).apply()
+
 
     override var cartShopInfo: String?
         get() = cartPreferences.getString(AppConstants.CART_SHOP_INFO, null)

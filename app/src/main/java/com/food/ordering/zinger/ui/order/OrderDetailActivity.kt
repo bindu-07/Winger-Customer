@@ -55,6 +55,7 @@ class OrderDetailActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var errorSnackBar: Snackbar
     private lateinit var order: OrderItemListModel
     private var orderId: String? = null
+    private var pay_on_delivery: String? = null
     var isPickup = false
 
     @ExperimentalCoroutinesApi
@@ -69,6 +70,8 @@ class OrderDetailActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun getArgs() {
         orderId = intent.getStringExtra(AppConstants.ORDER_ID)
+        pay_on_delivery = intent.getStringExtra((AppConstants.PAYMENT_MODE))
+
         if (orderId.isNullOrEmpty()) {
             order = Gson().fromJson(intent.getStringExtra(AppConstants.ORDER_DETAIL), OrderItemListModel::class.java)
         } else {
@@ -94,6 +97,7 @@ class OrderDetailActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun updateUI() {
+
         binding.textShopName.text = order.transactionModel.orderModel.shopModel?.name
         try {
             val apiDateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
@@ -112,7 +116,8 @@ class OrderDetailActivity : AppCompatActivity(), View.OnClickListener {
         binding.textOrderId.text = "#" + order.transactionModel.orderModel.id
         binding.textTransactionId.text = "#" + order.transactionModel.transactionId
         binding.textTotalPrice.text = "₹" + order.transactionModel.orderModel.price.toInt().toString()
-        binding.textPaymentMode.text = "Paid via " + order.transactionModel.paymentMode
+//        binding.textPaymentMode.text = "Paid via\n" + order.transactionModel.paymentMode
+        binding.textPaymentMode.visibility = View.GONE
         if (!order.transactionModel.orderModel.cookingInfo.isNullOrEmpty()) {
             binding.textInfo.text = order.transactionModel.orderModel.cookingInfo
         } else {

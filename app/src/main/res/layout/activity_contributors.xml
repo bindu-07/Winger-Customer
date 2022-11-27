@@ -113,7 +113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_semibold"
-                            android:text="Shrikanth Ravi"
+                            android:text="Bindu Hite"
                             android:textColor="@android:color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -123,7 +123,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="Android Developer &amp; UI Designer"
+                            android:text="Android &amp; Backend Developer"
                             android:textColor="@android:color/tab_indicator_text"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -149,6 +149,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clipChildren="false"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <com.google.android.material.card.MaterialCardView
@@ -216,6 +217,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clipChildren="false"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <com.google.android.material.card.MaterialCardView

@@ -49,12 +49,13 @@ class ShopAdapter(private val context: Context, private val shopList: List<ShopC
                 if (shop.configurationModel.isOrderTaken == 1) {
                     binding.textShopName.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, android.R.color.black))
                     binding.textShopDesc.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, android.R.color.tab_indicator_text))
-                    binding.textShopRating.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, android.R.color.tab_indicator_text))
-                    binding.textShopRating.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_star, 0, 0, 0)
+                    binding.textShopRating.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, android.R.color.white))
+                    binding.textShopRating.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_star_white, 0, 0, 0)
                     binding.imageShop.clearColorFilter()
                     if (shop.configurationModel.isDeliveryAvailable == 1) {
                         //binding.textShopDesc.text = "Closes at "+shop.shopModel.closingTime.substring(0,5)
                         binding.textShopDesc.text = "Open now"
+                        binding.textShopDesc.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.green))
                     } else {
                         //binding.textShopDesc.text = "Closes at "+shop.shopModel.closingTime.substring(0,5)+" (Delivery not available)"
                         binding.textShopDesc.text = "Pick up only"
@@ -64,8 +65,8 @@ class ShopAdapter(private val context: Context, private val shopList: List<ShopC
                     binding.textShopDesc.text = "Not taking orders"
                     binding.textShopName.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.disabledColor))
                     binding.textShopDesc.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.disabledColor))
-                    binding.textShopRating.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.disabledColor))
-                    binding.textShopRating.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_star_disabled, 0, 0, 0)
+                    binding.textShopRating.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.white))
+                    binding.textShopRating.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_star_white, 0, 0, 0)
                     val colorMatrix = ColorMatrix()
                     colorMatrix.setSaturation(0f)
                     val filter = ColorMatrixColorFilter(colorMatrix)
@@ -75,8 +76,8 @@ class ShopAdapter(private val context: Context, private val shopList: List<ShopC
                 binding.textShopDesc.text = "Opens at "+openingTimeString
                 binding.textShopName.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.disabledColor))
                 binding.textShopDesc.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.disabledColor))
-                binding.textShopRating.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.disabledColor))
-                binding.textShopRating.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_star_disabled, 0, 0, 0)
+                binding.textShopRating.setTextColor(ContextCompat.getColor(binding.layoutRoot.context, R.color.white))
+                binding.textShopRating.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_star_white, 0, 0, 0)
                 val colorMatrix = ColorMatrix()
                 colorMatrix.setSaturation(0f)
                 val filter = ColorMatrixColorFilter(colorMatrix)
@@ -84,9 +85,15 @@ class ShopAdapter(private val context: Context, private val shopList: List<ShopC
             }
 
             if(shop.ratingModel.rating==0.0){
-                binding.textShopRating.text = "No ratings yet"
+                binding.textShopRating.text = "New"
+                binding.textShopRatingCount.text = "0 rating"
             }else {
-                binding.textShopRating.text = shop.ratingModel.rating.toString()+" ("+shop.ratingModel.userCount+")"
+                binding.textShopRating.text = shop.ratingModel.rating.toString()
+                if (shop.ratingModel.userCount == 1){
+                    binding.textShopRatingCount.text = shop.ratingModel.userCount.toString() + " rating"
+                }else {
+                    binding.textShopRatingCount.text = shop.ratingModel.userCount.toString() + " ratings"
+                }
             }
             binding.layoutRoot.setOnClickListener { listener.onItemClick(shop, position) }
         }

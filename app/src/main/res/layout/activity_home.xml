@@ -33,36 +33,72 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorAccent"
+
                         android:orientation="vertical"
                         android:padding="16dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
                             android:orientation="horizontal">
 
+
+
+
+                            <LinearLayout
+                                android:id="@+id/layout_choose_campus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/text_campus_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:drawableStart="@drawable/map_marker"
+                                    android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                                    android:drawablePadding="4dp"
+                                    android:drawableTint="#16a085"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:gravity="center|start"
+                                    android:maxEms="25"
+                                    android:maxLength="25"
+                                    android:maxLines="1"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="4dp"
+                                    android:paddingBottom="4dp"
+                                    android:text=""
+                                    android:textColor="#16a085"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+                            <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
                             <ImageView
                                 android:id="@+id/image_menu"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_gravity="center"
-                                android:layout_marginEnd="16dp"
+
                                 android:scaleType="fitCenter"
                                 android:src="@drawable/ic_menu_white_24dp"
-                                android:tint="@android:color/white"
+
                                 android:visibility="visible" />
+<!--                            <ImageView-->
+<!--                                android:layout_width="44dp"-->
+<!--                                android:layout_height="44dp"-->
+<!--                                android:src="@drawable/logo" />-->
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="1dp"
-                                android:layout_weight="1" />
 
-                            <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_ssn_logo"
-                                android:tint="@android:color/white" />
+                            <!--                            <ImageView-->
+                            <!--                                android:layout_width="60dp"-->
+                            <!--                                android:layout_height="40dp"-->
+                            <!--                                android:src="@drawable/ic_ssn_logo"-->
+                            <!--                                android:tint="@android:color/white" />-->
                         </LinearLayout>
 
                         <TextView
@@ -74,7 +110,8 @@
                             android:paddingTop="3dp"
                             android:textAppearance="@style/AppbarTitle"
                             android:textColor="@android:color/white"
-                            tools:text="Good Evening,\nShrikanth" />
+                            android:visibility="gone"
+                            tools:text="Good Evening,\nBindu" />
 
 
                     </LinearLayout>
@@ -86,36 +123,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="12dp">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:gravity="center|start"
-                        android:text="@string/label_outlets"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="0dp"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_gravity="center"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:fontFamily="@font/poppins_semibold"-->
+                    <!--                        android:gravity="center|start"-->
+                    <!--                        android:text="@string/label_outlets"-->
+                    <!--                        android:textColor="@android:color/black"-->
+                    <!--                        android:textSize="16sp"-->
+                    <!--                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/text_search"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginStart="16dp"
-                        android:background="@drawable/bg_rounded"
-                        android:drawableEnd="@drawable/ic_drawer_search_small"
+                        android:background="@drawable/edittext"
+                        android:drawableStart="@drawable/ic_drawer_search_small"
                         android:drawablePadding="8dp"
                         android:fontFamily="@font/open_sans_semibold"
                         android:paddingStart="10dp"
-                        android:paddingTop="6dp"
+                        android:paddingTop="10dp"
                         android:paddingEnd="10dp"
-                        android:paddingBottom="6dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/label_search_outlets_or_dish"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
 
@@ -127,13 +163,111 @@
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_shops"
+                <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    android:paddingBottom="80dp"
-                    tools:listitem="@layout/item_shop" />
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/slider_card"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp">
+
+                            <ss.com.bannerslider.Slider
+                                android:id="@+id/cover_slider"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                app:slider_animateIndicators="true"
+                                app:slider_selectedSlideIndicator="@drawable/bg_rounded_green"
+                                app:slider_unselectedSlideIndicator="@drawable/bg_rounded"
+                                app:slider_interval="3000"
+                                app:slider_loopSlides="true" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/grubs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_margin="15dp"
+                            android:gravity="center|start"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:text="Grubs Up!"
+                             />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_shops"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:paddingBottom="10dp"
+                            tools:listitem="@layout/item_shop" />
+
+
+                        <LinearLayout
+                            android:id="@+id/learn"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center|start"
+                                android:text="Learn about drone delivery"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:textColor="@android:color/black"
+                                android:textSize="20sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="15dp"
+                                android:layout_marginVertical="10dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="10dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="200dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/images" />
+                            </com.google.android.material.card.MaterialCardView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center|start"
+                                android:text="Learn about instant delivery and how it works"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@android:color/tab_indicator_text" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
             <com.facebook.shimmer.ShimmerFrameLayout

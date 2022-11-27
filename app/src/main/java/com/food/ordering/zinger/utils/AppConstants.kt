@@ -27,6 +27,7 @@ object AppConstants {
     const val CART_DELIVERY_LOCATION = "cart_delivery_location"
     const val ORDER_DETAIL = "order_detail"
     const val ORDER_ID = "order_id"
+    const val PAYMENT_MODE = "payment_mode"
     const val TRANSACTION_TOKEN = "transaction_token"
     const val URL = "URL"
     const val TEMP_MOBILE = "temp_mobile"

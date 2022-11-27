@@ -41,8 +41,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:background="@color/colorAccentLight1" />
+                    android:layout_height="150dp" />
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar"
@@ -96,6 +95,10 @@
 
                 </androidx.recyclerview.widget.RecyclerView>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f2f2f2" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -114,11 +117,16 @@
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
                         android:id="@+id/radio_delivery"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/open_sans_semibold"
                         android:text="@string/label_delivery" />
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:background="@android:color/white"-->
+<!--                        android:src="@drawable/coming"                         />-->
 
                     <TextView
                         android:id="@+id/text_delivery_price"
@@ -126,6 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginEnd="8dp"
+                        android:layout_marginStart="20dp"
                         android:fontFamily="@font/open_sans_semibold"
                         android:gravity="center|end"
                         android:minWidth="60dp"
@@ -139,65 +148,144 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="10dp"
                     android:background="#f2f2f2" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-
-                    <ImageView
-                        android:id="@+id/image_veg"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_gravity="center"
-                        android:background="@android:color/white"
-                        android:src="@drawable/ic_info"
-                        android:tint="@color/colorAccent" />
-
-
-                    <TextView
-                        android:id="@+id/text_food_name"
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_bold"
-                        android:gravity="center|start"
-                        android:text="@string/label_to_pay"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp">
 
-                    <include
-                        android:id="@+id/layoutQuantityControl"
-                        layout="@layout/inc_dec_view"
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/total_item"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center|start"
+                            android:text="Item total"
+                            android:textColor="@color/md_black_1000"
+                            android:textSize="16sp"
+                            />
+
+
+
+                        <TextView
+                            android:id="@+id/item_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:gravity="center|end"
+                            android:minWidth="60dp"
+                            android:text="₹50"
+                            android:textColor="@color/md_black_1000"
+                            android:textSize="14dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="16dp"
-                        android:visibility="invisible" />
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/taxes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center|start"
+                            android:text="Pickup charges"
+                            android:textColor="@color/md_black_1000"
+                            android:textSize="16sp"
+                             />
 
 
-                    <TextView
-                        android:id="@+id/text_total"
-                        android:layout_width="wrap_content"
+
+
+                        <TextView
+                            android:id="@+id/delivery_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center|end"
+                            android:minWidth="60dp"
+                            android:text="FREE"
+                            android:textColor="@color/green"
+                            android:textSize="14dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/open_sans_bold"
-                        android:gravity="center|end"
-                        android:minWidth="60dp"
-                        android:text="₹50"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
 
+
+                        <ImageView
+                            android:id="@+id/image_veg"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@android:color/white"
+                            android:src="@drawable/ic_info"
+                            android:tint="@color/colorAccent" />
+
+
+                        <TextView
+                            android:id="@+id/text_food_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center|start"
+                            android:text="@string/label_to_pay"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <include
+                            android:id="@+id/layoutQuantityControl"
+                            layout="@layout/inc_dec_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="16dp"
+                            android:visibility="invisible" />
+
+
+                        <TextView
+                            android:id="@+id/text_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center|end"
+                            android:minWidth="60dp"
+                            android:text="₹50"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f2f2f2" />
 
 
                 <TextView
@@ -232,6 +320,27 @@
                     android:padding="16dp"
                     android:text="@string/label_enter_delivery_location"
                     android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/loader"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/setup_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/bg_rounded_green"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:gravity="center|start"
+                    android:padding="10dp"
+                    android:text="SETUP DELIVERY LOCATION"
+                    android:textColor="@color/white" />
+
 
                 <View
                     android:layout_width="match_parent"

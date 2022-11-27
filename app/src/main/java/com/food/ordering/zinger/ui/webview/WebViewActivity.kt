@@ -36,7 +36,7 @@ class WebViewActivity : AppCompatActivity() {
         binding.textTitle.text = title
         binding.webView.settings.javaScriptEnabled = true
         if(!url.isNullOrEmpty()){
-            binding.webView.loadUrl(url)
+            binding.webView.loadUrl(url!!)
         }else{
             binding.webView.loadUrl("https://zinger.tech")
         }

@@ -51,7 +51,7 @@ class FoodAdapter(private val context: Context, private val foodItemList: List<M
             }
             if (food.quantity == 0) {
                 binding.layoutQuantityControl.imageSub.visibility = View.GONE
-                binding.layoutQuantityControl.textQuantity.text = "Add"
+                binding.layoutQuantityControl.textQuantity.text = "ADD"
             } else {
                 binding.layoutQuantityControl.imageSub.visibility = View.VISIBLE
                 binding.layoutQuantityControl.textQuantity.text = food.quantity.toString()

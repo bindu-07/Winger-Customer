@@ -1,6 +1,7 @@
 package com.food.ordering.zinger.ui.search
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -29,10 +30,12 @@ class SearchAdapter(private val menuList: List<MenuItemModel>, private val liste
             if(menuItem.isDish){
                 binding.textShopName.text = menuItem.name
                 binding.textShopDesc.text = menuItem.shopModel?.name
+                binding.textShopRating.text = "₹"+ menuItem.price
                 Picasso.get().load(menuItem.photoUrl).placeholder(R.drawable.ic_food).into(binding.imageShop)
             }else{
                 binding.textShopName.text = menuItem.shopModel?.name
                 binding.textShopDesc.text = "Restaurant"
+                binding.textShopRating.visibility = View.GONE
                 Picasso.get().load(menuItem.photoUrl).placeholder(R.drawable.ic_shop).into(binding.imageShop)
             }
             binding.layoutRoot.setOnClickListener { listener.onItemClick(menuItem, position) }

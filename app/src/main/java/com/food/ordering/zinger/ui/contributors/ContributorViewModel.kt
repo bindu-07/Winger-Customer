@@ -17,13 +17,13 @@ class ContributorViewModel() : ViewModel() {
         contributorList.clear()
         contributorList.add(
                 ContributorModel(
-                        "Shrikanth Ravi",
-                        "Android Developer & UI Designer",
-                        "https://github.com/shrikanth7698",
-                        "https://www.linkedin.com/in/shrikanthravi",
-                        "shrikanthravi.me@gmail.com",
-                        "https://shrikanthravi.me/",
-                        "file:///android_asset/shrikanth.jpg"
+                        "Bindu Hite",
+                        "Android & Backend Developer",
+                        "https://github.com/bindu-07",
+                        "https://www.linkedin.com/in/bindu-hite-46890a193/",
+                        "hitebindu2002@gmail.com",
+                        "https://twitter.com/BinduHite",
+                        "file:///android_asset/bindu.jpg"
                 )
         )
         contributorList.add(

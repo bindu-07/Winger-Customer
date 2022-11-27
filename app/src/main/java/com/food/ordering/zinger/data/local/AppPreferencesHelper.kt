@@ -14,6 +14,7 @@ interface AppPreferencesHelper {
     val shopList: String?
     val cartShop: String?
     val cartDeliveryPref: String?
+    val paymentMode: String?
     val cartShopInfo: String?
     val cartDeliveryLocation: String?
     val tempMobile: String?

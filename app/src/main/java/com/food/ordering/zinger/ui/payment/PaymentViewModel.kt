@@ -1,6 +1,9 @@
 package com.food.ordering.zinger.ui.payment
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.food.ordering.zinger.data.local.Resource
 import com.food.ordering.zinger.data.model.PlaceOrderRequest
 import com.food.ordering.zinger.data.model.Response

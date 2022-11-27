@@ -134,7 +134,7 @@ class ZingerFirebaseMessagingService : FirebaseMessagingService() {
 
     private fun sendNotification(id: Int, title: String?, message: String?) {
         val builder = NotificationCompat.Builder(applicationContext, "7698")
-                .setSmallIcon(R.drawable.ic_zinger_notification_icon)
+                .setSmallIcon(R.mipmap.icon)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setStyle(NotificationCompat.BigTextStyle()
@@ -148,7 +148,7 @@ class ZingerFirebaseMessagingService : FirebaseMessagingService() {
 
     private fun sendNotificationWithPendingIntent(id: Int, title: String?, message: String?, pendingIntent: PendingIntent) {
         val builder = NotificationCompat.Builder(this, "7698")
-                .setSmallIcon(R.drawable.ic_zinger_notification_icon)
+                .setSmallIcon(R.mipmap.icon)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setStyle(NotificationCompat.BigTextStyle()

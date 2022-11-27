@@ -84,7 +84,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_gravity="center"
-					android:background="@drawable/bg_rounded"
+					android:background="@drawable/edittext"
 					android:drawableStart="@drawable/ic_drawer_search_small"
 					android:drawablePadding="8dp"
 					android:fontFamily="@font/open_sans_semibold"
